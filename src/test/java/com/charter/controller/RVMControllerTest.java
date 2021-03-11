@@ -30,7 +30,7 @@ import com.charter.service.RVMService;
 @WebMvcTest(RVMController.class)
 public class RVMControllerTest {
 
-	@Autowired
+	/*@Autowired
     private MockMvc mockMvc;
     
     @MockBean
@@ -85,7 +85,7 @@ public class RVMControllerTest {
         .accept(MediaType.APPLICATION_JSON)).andExpect(status().isOk())
     	.andDo(print());
         
-    }
+    }*/
 
 	/*
 	 * @Test public void ShouldRetrieveEmailByPhone(){
