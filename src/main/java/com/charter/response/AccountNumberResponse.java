@@ -4,13 +4,14 @@ import java.sql.Timestamp;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 @JsonInclude(value = Include.NON_DEFAULT)
 public class AccountNumberResponse {
 
 	private String txnId;
 
-	private Timestamp timeStamp;
+	private Timestamp timestamp;
 
 	private String accountNumber;
 
@@ -22,14 +23,23 @@ public class AccountNumberResponse {
 
 	private String responseDescription;
 
+	@JsonProperty("ResponseCode")
 	private String responseCode;
 
-	public String getTsnId() {
+	public String getTxnId() {
 		return txnId;
 	}
 
-	public void setTsnId(String tsnId) {
-		this.txnId = tsnId;
+	public void setTxnId(String txnId) {
+		this.txnId = txnId;
+	}
+
+	public Timestamp getTimestamp() {
+		return timestamp;
+	}
+
+	public void setTimestamp(Timestamp timestamp) {
+		this.timestamp = timestamp;
 	}
 
 	public String getAccountNumber() {
@@ -56,6 +66,14 @@ public class AccountNumberResponse {
 		this.soloAccountNumber = soloAccountNumber;
 	}
 
+	public String getPhoneNumber() {
+		return phoneNumber;
+	}
+
+	public void setPhoneNumber(String phoneNumber) {
+		this.phoneNumber = phoneNumber;
+	}
+
 	public String getResponseDescription() {
 		return responseDescription;
 	}
@@ -70,22 +88,6 @@ public class AccountNumberResponse {
 
 	public void setResponseCode(String responseCode) {
 		this.responseCode = responseCode;
-	}
-
-	public Timestamp getTimeStamp() {
-		return timeStamp;
-	}
-
-	public void setTimeStamp(Timestamp timeStamp) {
-		this.timeStamp = timeStamp;
-	}
-
-	public String getPhoneNumber() {
-		return phoneNumber;
-	}
-
-	public void setPhoneNumber(String phoneNumber) {
-		this.phoneNumber = phoneNumber;
 	}
 
 }

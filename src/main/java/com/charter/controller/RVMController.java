@@ -1,15 +1,20 @@
 package com.charter.controller;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.charter.dto.AccountDetails;
+import com.charter.request.EmailAddressRequest;
 import com.charter.response.AccountNumberResponse;
 import com.charter.response.EmailAddressResponse;
+import com.charter.response.EmailUpdateResponse;
 import com.charter.service.RVMService;
 
 import io.swagger.annotations.Api;
@@ -48,11 +53,9 @@ public class RVMController {
 	@PutMapping("/updateRvmEmailAddress")
 	@ApiOperation(value = " Update  Email Ids based on account Number and Phone Number")
 	@ApiResponses(value = { @ApiResponse(code = 200, message = "Successfully updated Email id"),
-			@ApiResponse(code = 400, message = "Input Validation Error(Id and UserId Required) or User Id, App Id and Key combination already exists or Permission denied"),
-			@ApiResponse(code = 404, message = "The User Prefernce id not found"),
 			@ApiResponse(code = 500, message = "Internal error") })
-	public AccountDetails updateRvmEmailAddress(@RequestParam String accountNumber, @RequestParam String phoneNumber) { //
-
-		return rvmService.updateRvmEmailAddress();
+	public EmailUpdateResponse updateRvmEmailAddress(@RequestBody EmailAddressRequest requestBody) { 
+		
+		return rvmService.updateRvmEmailAddress(requestBody);
 	}
 }

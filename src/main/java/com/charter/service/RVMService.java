@@ -1,8 +1,9 @@
 package com.charter.service;
 
-import com.charter.dto.AccountDetails;
+import com.charter.request.EmailAddressRequest;
 import com.charter.response.AccountNumberResponse;
 import com.charter.response.EmailAddressResponse;
+import com.charter.response.EmailUpdateResponse;
 
 public interface RVMService {
 
@@ -10,6 +11,6 @@ public interface RVMService {
 
  AccountNumberResponse getAccountNumber(String systemId, String phoneNumber);
 
- AccountDetails updateRvmEmailAddress();
+ EmailUpdateResponse updateRvmEmailAddress(EmailAddressRequest request);
 
 }

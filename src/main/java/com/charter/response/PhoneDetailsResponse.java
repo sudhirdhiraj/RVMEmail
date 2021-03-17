@@ -6,7 +6,7 @@ public class PhoneDetailsResponse {
 
 	private String phoneNumber;
 	
-	private List<String> emailAddressList;
+	private List<String> emails;
 
 	public String getPhoneNumber() {
 		return phoneNumber;
@@ -16,12 +16,14 @@ public class PhoneDetailsResponse {
 		this.phoneNumber = phoneNumber;
 	}
 
-	public List<String> getEmailAddressList() {
-		return emailAddressList;
+	public List<String> getEmails() {
+		return emails;
 	}
 
-	public void setEmailAddressList(List<String> emailAddressList) {
-		this.emailAddressList = emailAddressList;
+	public void setEmails(List<String> emails) {
+		this.emails = emails;
 	}
+
+	
 	
 }

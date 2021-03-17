@@ -1,28 +1,27 @@
 package com.charter.dto;
 
-import java.time.LocalDateTime;
+import java.sql.Timestamp;
 
 public class BaseEntity {
 
- private String tsnId;
+	private String txnId;
 
- private LocalDateTime timeStamp;
+	private Timestamp timestamp;
 
- public String getTsnId() {
-  return tsnId;
- }
+	public String getTxnId() {
+		return txnId;
+	}
 
- public void setTsnId(String tsnId) {
-  this.tsnId = tsnId;
- }
+	public void setTxnId(String txnId) {
+		this.txnId = txnId;
+	}
 
- public LocalDateTime getTimeStamp() {
-  return timeStamp;
- }
+	public Timestamp getTimestamp() {
+		return timestamp;
+	}
 
- public void setTimeStamp(LocalDateTime timeStamp) {
-  this.timeStamp = timeStamp;
- }
- 
- 
+	public void setTimestamp(Timestamp timestamp) {
+		this.timestamp = timestamp;
+	}
+
 }
